@@ -30,6 +30,22 @@ Following these steps will help you maintain a clean and efficient Git repositor
 npx create-expo-app@latest --template blank RNProject
 ```
 
+## Resolving "Too many files open" issue with Expo on macOS
 
+If you encounter the "Too many files open" error while using Expo on macOS, you can resolve it by installing Watchman. Watchman helps to watch file changes and can handle a large number of files efficiently.
 
+1. **Install Watchman:**
+   Use Homebrew to install Watchman:
 
+   ```sh
+   brew install watchman
+   ```
+
+2. **Rebuild the Project:**
+   After installing Watchman, delete the `node_modules` directory and reinstall the dependencies. Then, start the project again
+
+   ```sh
+   rm -rf node_modules
+   npm install
+   npm start
+   ```
